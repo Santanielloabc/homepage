@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi sono – Esercitazioni Digitali</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding-top: 70px; background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); }
+    .section-title { font-weight: 700; color: #2c3e50; margin-bottom: 1.5rem; letter-spacing: 1px; }
+.bio-box {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+  padding: 40px;            /* più spazio interno */
+  max-width: 700px;         /* più largo */
+  margin: 60px auto;        /* più margine sopra/sotto */
+  text-align: center;
+}    .bio-img { width: 120px; border-radius: 50%; margin-bottom: 20px; }
+    .footer { background: #2c3e50; color: #fff; padding: 24px 0 12px 0; font-size: 1rem; letter-spacing: 1px; }
+    
+    /* Animazioni fade-in */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.typewriter {
+  font-family: 'Georgia', serif; /* più elegante */
+  font-size: 1.1rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  border-right: 2px solid #2c3e50;
+  overflow: hidden;
+}
+
+.bio-box {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.bio-img {
+  animation: fadeIn 1.5s ease-out forwards;
+}
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Prof.ssa Assunta Santaniello</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="chisono.html">Chi sono</a></li>
+        <li class="nav-item"><a class="nav-link" href="esercizi.html">Esercizi</a></li>
+        <li class="nav-item"><a class="nav-link" href="guide.html">Guide</a></li>
+        <li class="nav-item"><a class="nav-link" href="contatti.html">Contatti</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <section class="container bio-box">
+  <h2 class="section-title">Chi sono</h2>
+  <img src="miafoto.jpg" alt="Foto profilo" class="bio-img">
+  <p id="bio-text" class="typewriter"></p>
+</section>
+<script>
+const bioText = `Benvenuti! Sono Assunta Santaniello, docente di Informatica presso l’Istituto Bertacchi di Lecco. Dopo la laurea magistrale in Economia, ho scoperto con entusiasmo il mondo digitale, trasformandolo in una vera passione.
+
+Da sempre amo sperimentare strumenti innovativi per rendere il lavoro più efficiente e creativo. Questa attitudine si riflette nella mia attività didattica, dove integro tecnologie e metodologie moderne per rendere l’apprendimento coinvolgente e accessibile a tutti.
+
+Credo profondamente nel valore della condivisione e della collaborazione tra docenti: le idee migliori nascono quando si mettono in comune. Il mio obiettivo è ispirare studenti e colleghi a sfruttare il digitale con consapevolezza e curiosità.`;
+
+let i = 0;
+const speed = 15; // velocità digitazione in ms
+
+function typeWriter() {
+  if (i < bioText.length) {
+    document.getElementById("bio-text").innerHTML += bioText.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+window.onload = typeWriter;
+</script>
+</section>
+<footer class="footer text-center">
+  <div class="container">
+    <div class="mb-2">© 2025 Prof. Assunta Santaniello– Tutti i diritti riservati</div>
+
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
