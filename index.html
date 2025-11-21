@@ -7,134 +7,43 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&display=swap');
-        /* Animazioni per la sezione Chi sono */
-        .bio-classic {
-          text-align: center;
-          margin: 40px auto 32px auto;
-          font-family: Georgia, serif;
-          font-size: 1.15rem;
-          color: #2c3e50;
-          max-width: 600px;
-          opacity: 0;
-          transform: translateY(30px);
-          animation: bioFadeIn 1.2s 0.2s forwards;
-        }
-        .bio-classic img {
-          transition: transform 0.5s cubic-bezier(.68,-0.55,.27,1.55);
-          animation: bioZoomIn 1.2s 0.4s forwards;
-          opacity: 0;
-          transform: scale(0.8);
-        }
-        .bio-classic h2 {
-          font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-          opacity: 0;
-          transform: translateY(-20px);
-          animation: bioTitleIn 1s 0.6s forwards;
-        }
-        .bio-classic p {
-          opacity: 0;
-          animation: bioTextIn 1.2s 0.8s forwards;
-        }
-        .bio-classic img:hover {
-          transform: scale(1.08);
-          box-shadow: 0 8px 32px rgba(44,62,80,0.18);
-        }
-        @keyframes bioFadeIn {
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes bioZoomIn {
-          to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes bioTitleIn {
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes bioTextIn {
-          to { opacity: 1; }
-        }
     body {
       padding-top: 70px;
-      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
     }
     .navbar-brand {
       font-weight: bold;
-      letter-spacing: 1px;
     }
     .hero {
-      background: linear-gradient(90deg, #f8f9fa 60%, #e0eafc 100%);
-      padding: 60px 0 40px 0;
+      background-color: #f8f9fa;
+      padding: 50px 0;
       text-align: center;
-      position: relative;
-      overflow: hidden;
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .card {
+      margin-bottom: 20px;
     }
     .hero-img {
       max-width: 180px;
       border-radius: 50%;
       box-shadow: 0 4px 24px rgba(0,0,0,0.08);
       margin-bottom: 20px;
-      animation: fadeIn 1.2s;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .hero h1 {
-       font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: #2c3e50;
-  animation: fadeIn 1.2s 0.2s backwards;
-  margin: 0;
-    }
-    .hero p {
-      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-      font-size: 1.25rem;
-      color: #34495e;
-      animation: fadeIn 1.2s 0.4s backwards;
-    }
-    .card {
-             font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-
-      margin-bottom: 20px;
-      box-shadow: 0 2px 12px rgba(44,62,80,0.08);
-      transition: transform 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 6px 24px rgba(44,62,80,0.12);
     }
     .section-title {
       font-weight: 700;
-      color: #2c3e50;
       margin-bottom: 1.5rem;
-      letter-spacing: 1px;
-    }
-    .bio-classic {
-      text-align: center;
-      margin: 40px auto 32px auto;
-      font-family: Georgia, serif;
-      font-size: 1.15rem;
-      color: #2c3e50;
-      max-width: 600px;
-    }
-    .news-box {
-      background: #f8f9fa;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 40px;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.06);
-      animation: fadeIn 1.2s 0.8s backwards;
     }
     .footer {
-             font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-
       background: #2c3e50;
       color: #fff;
       padding: 24px 0 12px 0;
       font-size: 1rem;
       letter-spacing: 1px;
+      text-align: center;
     }
   </style>
 </head>
@@ -143,18 +52,16 @@
 <!-- Barra di navigazione -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">Prof.ssa Assunta Santaniello</a>
+    <a class="navbar-brand" href="#">Prof. Assunta</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="chisono.html">Chi sono</a></li>
-          <li class="nav-item"><a class="nav-link" href="guide.html">Guide</a></li>
-          <li class="nav-item"><a class="nav-link" href="esercizi.html">Esercizi</a></li>
-          <li class="nav-item"><a class="nav-link" href="contatti.html">Contatti</a></li>
-          <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Esercizi</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Guide</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contatti</a></li>
       </ul>
     </div>
   </div>
@@ -169,43 +76,53 @@
   </div>
 </section>
 
-<!-- Sezione Chi sono -->
-
 <!-- Sezione Novità -->
-<section class="container my-5 ">
-  <h2 class="section-title" >Ultime pubblicazioni</h2>
+<section class="container my-5">
+  <h2 class="section-title">Ultime pubblicazioni</h2>
   <div class="row" id="pubblicazioni-row">
     <!-- Le card novità verranno caricate qui tramite JavaScript -->
   </div>
 </section>
+
+<!-- Footer -->
+<footer class="footer">
+  © 2025 Prof. Assunta – Tutti i diritti riservati
+</footer>
+
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script per caricare le novità -->
 <script>
-// Carica tutte le novità da novita.json e mostra "Ultime pubblicazioni" ordinate per data
 fetch('novita.json')
   .then(response => response.json())
   .then(data => {
     const pubblicazioniRow = document.getElementById('pubblicazioni-row');
-    // Ordina per data decrescente (se presente)
+    // Ordina per data decrescente
     data.sort((a, b) => {
       const da = a.data ? new Date(a.data) : new Date(0);
       const db = b.data ? new Date(b.data) : new Date(0);
       return db - da;
     });
+
     data.forEach(novita => {
       const col = document.createElement('div');
       col.className = 'col-md-4';
       const oggi = new Date();
       const dataPub = novita.data ? novita.data : oggi.toISOString().slice(0, 10);
+
       let riferimentiHtml = '';
       if (novita.riferimenti && Array.isArray(novita.riferimenti) && novita.riferimenti.length > 0) {
         riferimentiHtml = `<div class='mb-2'><strong>Riferimenti utili:</strong><ul style='padding-left:18px;'>` +
           novita.riferimenti.map(ref => `<li><a href='${ref}' target='_blank' rel='noopener'>${ref}</a></li>`).join('') +
           `</ul></div>`;
       }
+
       let allegatoHtml = '';
       if (novita.allegato && novita.allegato.url) {
         allegatoHtml = `<div class='mb-2'><a href='${novita.allegato.url}' target='_blank' rel='noopener'><span style='font-size:1.2em;'>📎</span> Allegato</a></div>`;
       }
+
       col.innerHTML = `
         <div class="card h-100">
           <div class="card-body d-flex flex-column">
@@ -224,45 +141,5 @@ fetch('novita.json')
     });
   });
 </script>
-
-<!-- Sezione Chi sono -->
-
-<!-- Sezione Esercizi -->
-<!-- Sezione Esercizi rimossa: ora è in esercizi.html -->
-
-<!-- Footer -->
-<footer class="footer text-center">
-  <div class="container">
-    <div class="mb-2">© 2025 Prof. Assunta Santaniello – Tutti i diritti riservati</div>
-    <div>
-    
-
-    </div>
-  </div>
-<script>
-// Carica le novità da novita.json e crea le card divise per tipo
-fetch('novita.json')
-  .then(response => response.json())
-  .then(data => {
-    const guideRow = document.getElementById('guide-row');
-    const eserciziRow = document.getElementById('esercizi-row');
-    data.forEach(novita => {
-      const col = document.createElement('div');
-      col.className = 'col-md-4';
-      col.innerHTML = `
-        <div class="card h-100">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">${novita.titolo}</h5>
-            <p class="card-text">${novita.descrizione}</p>
-            <a href="${novita.link}" class="btn btn-primary mt-auto">${novita.testoBottone}</a>
-          </div>
-        </div>
-      `;
-      if (novita.tipo === 'guida') {
-        guideRow.appendChild(col);
-      } else if (novita.tipo === 'esercizio') {
-        eserciziRow.appendChild(col);
-      }
-    });
-  });
-</script>
+</body>
+</html>
