@@ -1,0 +1,16 @@
+# Ignora la cartella node_modules (non deve MAI andare su GitHub)
+node_modules/
+
+# File di log
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# Ambiente
+.env
+.env.local
+.env.*.local
