@@ -21,6 +21,16 @@
     "allegato": null,
     "riferimenti": []
   },
+   {
+    "tipo": "guida",
+    "categoria": "ECONOMIA AZIENDALE",
+    "titolo": "L'uso dei ratei",
+    "descrizione": "BBBBBBBBBBBBBBBBBBB",
+    "testoBottone": "Leggi la guida",
+    "data": "2025-11-21",
+    "allegato": null,
+    "riferimenti": []
+  },
   {
     "tipo": "esercizio",
     "categoria": "ECONOMIA AZIENDALE",
@@ -32,10 +42,10 @@
     "riferimenti": []
   },
   {
-    "tipo": "esercizio",
-    "categoria": "EXCEL",
-    "titolo": "FUNZIONI DI BASE",
-    "descrizione": "=SOMMA(A1:D3)",
+    "tipo": "guida",
+    "categoria": "INFORMATICA BIENNIO",
+    "titolo": "EXCEL: I PRINCIPI DI BASE",
+    "descrizione": "Funzioni SOMMA, MEDIA, MAX, MIN; Riferimenti assoluti e relativi; Incidenza percentuale; Funzioni: CONTA SE e SE",
     "testoBottone": "Vai all’esercizio",
     "data": "2025-11-20",
     "allegato": null,

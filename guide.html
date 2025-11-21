@@ -9,8 +9,7 @@
 body {
   padding-top: 70px;
   background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-          font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 .section-title {
   font-weight: 700;
@@ -38,12 +37,26 @@ body {
   font-size: 1rem;
   letter-spacing: 1px;
 }
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Mostra solo 2 righe */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card {
+  max-height: 280px;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
 </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">Prof.ssa Assunta Santaniello</a>
+    <a class="navbar-brand" href="index.html">Prof.ssa Assunta Santaniello</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -81,25 +94,57 @@ fetch('novita.json')
       .filter(item => item.tipo === "guida")
       .sort((a, b) => new Date(b.data) - new Date(a.data));
 
-    // Raggruppa per categoria
+    // Raggruppa per categoria (case-insensitive)
     const categorie = {};
     guide.forEach(e => {
-      if (!categorie[e.categoria]) categorie[e.categoria] = [];
-      categorie[e.categoria].push(e);
+      const cat = e.categoria.trim();
+      if (!categorie[cat]) categorie[cat] = [];
+      categorie[cat].push(e);
     });
 
     const container = document.getElementById("guide-container");
 
+    // Crea un unico accordion per tutte le categorie
+    const accordion = document.createElement("div");
+    accordion.className = "accordion";
+    accordion.id = "accordionGuide";
+    container.appendChild(accordion);
+
     for (const [categoria, items] of Object.entries(categorie)) {
-      // Titolo categoria
-      const catTitle = document.createElement("h4");
-      catTitle.className = "mt-4 mb-3";
-      catTitle.textContent = categoria;
-      container.appendChild(catTitle);
+      const accordionItem = document.createElement("div");
+      accordionItem.className = "accordion-item";
 
-      const row = document.createElement("div");
-      row.className = "row";
+      const headerId = `heading-${categoria.replace(/\s+/g,'')}`;
+      const collapseId = `collapse-${categoria.replace(/\s+/g,'')}`;
 
+      // Intestazione accordion (cliccabile)
+      const accordionHeader = document.createElement("h2");
+      accordionHeader.className = "accordion-header";
+      accordionHeader.id = headerId;
+
+      const button = document.createElement("button");
+      button.className = "accordion-button collapsed";
+      button.type = "button";
+      button.setAttribute("data-bs-toggle", "collapse");
+      button.setAttribute("data-bs-target", `#${collapseId}`);
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-controls", collapseId);
+      button.textContent = categoria;
+
+      accordionHeader.appendChild(button);
+      accordionItem.appendChild(accordionHeader);
+
+      // Corpo accordion
+      const accordionCollapse = document.createElement("div");
+      accordionCollapse.id = collapseId;
+      accordionCollapse.className = "accordion-collapse collapse";
+      accordionCollapse.setAttribute("aria-labelledby", headerId);
+      accordionCollapse.setAttribute("data-bs-parent", "#accordionGuide");
+
+      const accordionBody = document.createElement("div");
+      accordionBody.className = "accordion-body row";
+
+      // Aggiungi card
       items.forEach(g => {
         const col = document.createElement("div");
         col.className = "col-md-4";
@@ -110,44 +155,35 @@ fetch('novita.json')
         const cardBody = document.createElement("div");
         cardBody.className = "card-body";
 
-        // Titolo guida
         const titolo = document.createElement("h5");
         titolo.className = "card-title";
         titolo.textContent = g.titolo;
 
-        // Data pubblicazione
         const dataPub = document.createElement("p");
         dataPub.className = "text-muted mb-2";
         const dataObj = new Date(g.data);
-        const giorno = String(dataObj.getDate()).padStart(2,'0');
-        const mese = String(dataObj.getMonth() + 1).padStart(2,'0');
-        const anno = dataObj.getFullYear();
-        dataPub.textContent = `Pubblicato il ${giorno}/${mese}/${anno}`;
+        dataPub.textContent = `Pubblicato il ${String(dataObj.getDate()).padStart(2,'0')}/${String(dataObj.getMonth()+1).padStart(2,'0')}/${dataObj.getFullYear()}`;
 
-        // Descrizione
         const descr = document.createElement("p");
         descr.className = "card-text";
         descr.textContent = g.descrizione;
 
-        // Bottone
         const bottone = document.createElement("a");
         bottone.className = "btn btn-primary mt-2";
         bottone.textContent = g.testoBottone;
-        bottone.href = "#"; // oppure g.allegato se disponibile
+        bottone.href = g.allegato ? g.allegato : "#";
 
-        cardBody.appendChild(titolo);
-        cardBody.appendChild(dataPub);
-        cardBody.appendChild(descr);
-        cardBody.appendChild(bottone);
+        cardBody.append(titolo, dataPub, descr, bottone);
         card.appendChild(cardBody);
         col.appendChild(card);
-        row.appendChild(col);
+        accordionBody.appendChild(col);
 
-        // Effetto fade-in
         setTimeout(() => card.classList.add('show'), 100);
       });
 
-      container.appendChild(row);
+      accordionCollapse.appendChild(accordionBody);
+      accordionItem.appendChild(accordionCollapse);
+      accordion.appendChild(accordionItem);
     }
   })
   .catch(error => console.error('Errore caricando JSON:', error));

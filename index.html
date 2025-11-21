@@ -28,10 +28,25 @@
       font-size: 1.2rem;
     }
     .card {
-      margin-bottom: 20px;
-      box-shadow: 0 2px 12px rgba(44,62,80,0.08);
-      transition: transform 0.2s;
-    }
+  /* Rimuovi l’altezza massima */
+  max-height: none; 
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+  transition: transform 0.2s;
+}
+
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* solo la descrizione */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
     .card:hover {
       transform: translateY(-6px) scale(1.03);
       box-shadow: 0 6px 24px rgba(44,62,80,0.12);
