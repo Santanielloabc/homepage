@@ -1,54 +1,60 @@
 [
   {
-    "tipo": "esercizio",
-    "categoria": "ECONOMIA AZIENDALE",
-    "titolo": " RIMANENZE DI MAGAZZINO: COSTO MEDIO PONDERATO, LIFO, FIFO",
-    "descrizione": "La Beta snc ha in magazzino all'inizio dell'esercizio 600 unità di merce X81YZ, valutate al prezzo unitario di 8 euro. Durante il primo trimestre si verificano \r\nle seguenti movimentazioni:\r\n15/01: scarico di 200 unità\r\n10/02: carico di 100 unità al prezzo di 9,00 euro;\r\n18/02: scarico di 60 unità;\r\n-08/03: scarico di 40 unità;\r\n-18/03: carico di 100 unità al prezzo di 8,80;\r\n-28/03: scarico di 80 unità;\r\n\r\nCalcoliamo il valore degli scarichi di magazzino:\r\n1- con il metodo del costo medio ponderato continuo;\r\n2- con il metodo del costo medio ponderato per periodo;\r\n3- secondo il metodo LIFO;\r\n4- secondo il metodo FIFO;",
-    "testoBottone": "Vai all’esercizio",
-    "data": "2025-11-20",
-    "allegato": null,
-    "riferimenti": [
-      "https://www.youtube.com/watch?v=o1IC76dg6w4&t=367s"
-    ]
+     "id": 1,
+  "tipo": "esercizio",
+  "categoria": "ECONOMIA AZIENDALE",
+  "titolo": "RIMANENZE DI MAGAZZINO",
+  "descrizione": "La Beta snc ha in magazzino all'inizio dell'esercizio 600 unità di merce X81YZ, valutate al prezzo unitario di 8 euro. Durante il primo trimestre si verificano le seguenti movimentazioni:\n15/01: scarico di 200 unità\n10/02: carico di 100 unità al prezzo di 9,00 euro;\n18/02: scarico di 60 unità;\n08/03: scarico di 40 unità;\n18/03: carico di 100 unità al prezzo di 8,80;\n28/03: scarico di 80 unità;\n\nCalcoliamo il valore degli scarichi di magazzino:\n1- con il metodo del costo medio ponderato continuo;\n2- con il metodo del costo medio ponderato per periodo;\n3- secondo il metodo LIFO;\n4- secondo il metodo FIFO;",
+  "testoBottone": "Vai all'esercizio",
+  "data": "2025-11-20",
+  "allegato": null,
+  "riferimenti": ["https://www.youtube.com/watch?v=o1IC76dg6w4&t=367s"]
   },
   {
+    "id": 2,
     "tipo": "guida",
-    "categoria": "INTELLIGENZA ARTIFICALE",
+    "categoria": "INTELLIGENZA ARTIFICIALE",
     "titolo": "NotebookLM",
-    "descrizione": "NotebookLM è uno strumento sviluppato da Google Labs che funge da assistente intelligente per la ricerca e la gestione delle informazioni. \r\nGoogle NotebookLM\r\n+2\r\nGoogle Support\r\n+2\r\n\r\nPermette di caricare fonti (PDF, documenti Google, siti web, presentazioni, anche video e audio) e di interagire con esse tramite AI: porre domande, generare riassunti, trasformare contenuti in formati diversi.",
+    "descrizione": "Strumento di Google per interagire con documenti tramite AI.",
     "testoBottone": "Leggi la guida",
     "data": "2025-11-20",
     "allegato": null,
     "riferimenti": []
   },
-   {
+  {
+    "id": 3,
     "tipo": "guida",
     "categoria": "ECONOMIA AZIENDALE",
     "titolo": "L'uso dei ratei",
-    "descrizione": "BBBBBBBBBBBBBBBBBBB",
+    "descrizione": "Esempi pratici sui ratei.",
     "testoBottone": "Leggi la guida",
     "data": "2025-11-21",
     "allegato": null,
     "riferimenti": []
   },
   {
+    "id": 4,
     "tipo": "esercizio",
     "categoria": "ECONOMIA AZIENDALE",
     "titolo": "RATEI",
-    "descrizione": "LALALALALALALALAL",
-    "testoBottone": "Vai all’esercizio",
+    "descrizione": "Esercizio sui ratei.",
+    "testoBottone": "Vai all'esercizio",
     "data": "2025-11-21",
     "allegato": null,
     "riferimenti": []
   },
   {
+    "id": 5,
     "tipo": "guida",
     "categoria": "INFORMATICA BIENNIO",
     "titolo": "EXCEL: I PRINCIPI DI BASE",
-    "descrizione": "Funzioni SOMMA, MEDIA, MAX, MIN; Riferimenti assoluti e relativi; Incidenza percentuale; Funzioni: CONTA SE e SE",
-    "testoBottone": "Vai all’esercizio",
-    "data": "2025-11-20",
-    "allegato": null,
+    "descrizione": "Guida completa su Excel, comprendente:\n- Funzioni SOMMA, MEDIA, MAX, MIN\n- Riferimenti assoluti e relativi\n- Incidenza percentuale\n- Funzioni: CONTA.SE e SE\n\nIdeale per iniziare a gestire dati e calcoli automatici in modo efficace.\n In allegato una piccola guida realizzata con l'aiuto di Gemini",
+    "testoBottone": "Leggi la guida",
+    "data": "2025-11-21",
+    "allegato": {
+      "url": "allegati/EXCELIPRINCIPIDIBASE.pdf"
+    },
     "riferimenti": []
   }
+  
 ]

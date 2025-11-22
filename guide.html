@@ -11,24 +11,41 @@ body {
   background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
+.navbar-brand {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 .section-title {
   font-weight: 700;
   color: #2c3e50;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
+  text-align: center;
 }
 .card {
   margin-bottom: 20px;
-  box-shadow: 0 2px 12px rgba(44,62,80,0.08);
-  transition: transform 0.2s, opacity 0.5s;
+  box-shadow: 0 4px 20px rgba(44,62,80,0.1);
+  transition: transform 0.3s, opacity 0.5s;
   opacity: 0;
+  border-radius: 14px;
 }
 .card.show {
   opacity: 1;
 }
 .card:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 6px 24px rgba(44,62,80,0.12);
+  box-shadow: 0 8px 30px rgba(44,62,80,0.15);
+}
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
 }
 .footer {
   background: #2c3e50;
@@ -36,27 +53,25 @@ body {
   padding: 24px 0 12px 0;
   font-size: 1rem;
   letter-spacing: 1px;
+  text-align: center;
 }
-.card-text {
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Mostra solo 2 righe */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.accordion-button {
+  background-color: #f0f4f8;
+  color: #2c3e50;
+  font-weight: 600;
 }
-.card {
-  max-height: 280px;
-}
-.card-body {
-  display: flex;
-  flex-direction: column;
+.accordion-button:not(.collapsed) {
+  background-color: #dbe7f3;
+  color: #2c3e50;
 }
 </style>
 </head>
 <body>
+
+<!-- Navbar completa -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Prof.ssa Assunta Santaniello</a>
+    <a class="navbar-brand" href="index.html">Prof. Assunta Santaniello</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -79,7 +94,7 @@ body {
 
 <footer class="footer text-center">
   <div class="container">
-    <div class="mb-2">© 2025 Prof. Assunta – Tutti i diritti riservati</div>
+    <div class="mb-2">© 2025 Prof. Assunta Santaniello – Tutti i diritti riservati</div>
   </div>
 </footer>
 
@@ -89,22 +104,23 @@ body {
 fetch('novita.json')
   .then(response => response.json())
   .then(dati => {
-    // Filtra solo guide e ordina dal più recente al più vecchio
+
+    // Filtra solo guide e ordina dal più recente
     const guide = dati
-      .filter(item => item.tipo === "guida")
+      .filter(item => item.tipo && item.tipo.toLowerCase() === "guida")
       .sort((a, b) => new Date(b.data) - new Date(a.data));
 
-    // Raggruppa per categoria (case-insensitive)
+    // Raggruppa per categoria
     const categorie = {};
-    guide.forEach(e => {
-      const cat = e.categoria.trim();
+    guide.forEach(g => {
+      const cat = g.categoria.trim();
       if (!categorie[cat]) categorie[cat] = [];
-      categorie[cat].push(e);
+      categorie[cat].push(g);
     });
 
     const container = document.getElementById("guide-container");
 
-    // Crea un unico accordion per tutte le categorie
+    // Crea accordion per categorie
     const accordion = document.createElement("div");
     accordion.className = "accordion";
     accordion.id = "accordionGuide";
@@ -117,7 +133,6 @@ fetch('novita.json')
       const headerId = `heading-${categoria.replace(/\s+/g,'')}`;
       const collapseId = `collapse-${categoria.replace(/\s+/g,'')}`;
 
-      // Intestazione accordion (cliccabile)
       const accordionHeader = document.createElement("h2");
       accordionHeader.className = "accordion-header";
       accordionHeader.id = headerId;
@@ -134,7 +149,6 @@ fetch('novita.json')
       accordionHeader.appendChild(button);
       accordionItem.appendChild(accordionHeader);
 
-      // Corpo accordion
       const accordionCollapse = document.createElement("div");
       accordionCollapse.id = collapseId;
       accordionCollapse.className = "accordion-collapse collapse";
@@ -144,7 +158,6 @@ fetch('novita.json')
       const accordionBody = document.createElement("div");
       accordionBody.className = "accordion-body row";
 
-      // Aggiungi card
       items.forEach(g => {
         const col = document.createElement("div");
         col.className = "col-md-4";
@@ -153,7 +166,7 @@ fetch('novita.json')
         card.className = "card";
 
         const cardBody = document.createElement("div");
-        cardBody.className = "card-body";
+        cardBody.className = "card-body d-flex flex-column";
 
         const titolo = document.createElement("h5");
         titolo.className = "card-title";
@@ -169,9 +182,11 @@ fetch('novita.json')
         descr.textContent = g.descrizione;
 
         const bottone = document.createElement("a");
-        bottone.className = "btn btn-primary mt-2";
+        bottone.className = "btn btn-primary mt-auto";
         bottone.textContent = g.testoBottone;
-        bottone.href = g.allegato ? g.allegato : "#";
+
+        // Linka alla pagina dettaglio usando l'ID corretto dal JSON
+        bottone.href = `dettaglio.html?id=${g.id}`;
 
         cardBody.append(titolo, dataPub, descr, bottone);
         card.appendChild(cardBody);
@@ -184,6 +199,7 @@ fetch('novita.json')
       accordionCollapse.appendChild(accordionBody);
       accordionItem.appendChild(accordionCollapse);
       accordion.appendChild(accordionItem);
+
     }
   })
   .catch(error => console.error('Errore caricando JSON:', error));

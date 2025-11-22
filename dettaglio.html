@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dettaglio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      padding-top: 70px;
+      font-family: "Playfair Display", Georgia, serif;
+      background: #f7f9fc;
+    }
+    .content-box {
+      background: #fff;
+      padding: 35px;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+      max-width: 900px;
+      margin: 40px auto;
+    }
+    pre {
+      white-space: pre-wrap;
+      font-family: inherit;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Prof. Assunta Santaniello</a>
+  </div>
+</nav>
+
+<div id="contenuto" class="content-box">
+  <h2>Caricamento...</h2>
+</div>
+
+
+<script>
+// Ottieni il parametro "?id="
+const urlParams = new URLSearchParams(window.location.search);
+const id = parseInt(urlParams.get("id"));
+
+// Carica il JSON
+fetch("novita.json")
+  .then(response => response.json())
+  .then(data => {
+    const item = data.find(el => el.id == id);
+
+    const box = document.getElementById("contenuto");
+
+    if (!item) {
+      box.innerHTML = "<h3>Elemento non trovato.</h3>";
+      return;
+    }
+
+    let riferimentiHtml = "";
+    if (item.riferimenti?.length > 0) {
+      riferimentiHtml =
+        `<h5>Riferimenti utili</h5><ul>` +
+        item.riferimenti.map(r => `<li><a href="${r}" target="_blank">${r}</a></li>`).join("") +
+        `</ul>`;
+    }
+
+    let allegatoHtml = "";
+    if (item.allegato?.url) {
+      allegatoHtml =
+        `<p><a href="${item.allegato.url}" target="_blank">📎 Visualizza allegato</a></p>`;
+    }
+
+    box.innerHTML = `
+      <span class="badge bg-info mb-3">${item.categoria}</span>
+      <h2>${item.titolo}</h2>
+      <p class="text-muted">🗓️ ${item.data}</p>
+
+      <pre>${item.descrizione}</pre>
+
+      ${riferimentiHtml}
+      ${allegatoHtml}
+
+      <a href="index.html" class="btn btn-outline-primary mt-4">⬅ Torna indietro</a>
+    `;
+  });
+</script>
+
+</body>
+</html>

@@ -9,44 +9,32 @@
   <style>
     body {
       padding-top: 70px;
-        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-
+      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
     }
-    
-    .navbar-brand {
-      font-weight: bold;
-    }
+    .navbar-brand { font-weight: bold; }
     .hero {
       background-color: #f8f9fa;
       padding: 50px 0;
       text-align: center;
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
     }
-    .hero h1 {
-      font-size: 3rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-    }
+    .hero h1 { font-size: 3rem; }
+    .hero p { font-size: 1.2rem; }
     .card {
-  /* Rimuovi l’altezza massima */
-  max-height: none; 
-  margin-bottom: 20px;
-  box-shadow: 0 2px 12px rgba(44,62,80,0.08);
-  transition: transform 0.2s;
-}
-
-.card-text {
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* solo la descrizione */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-}
+      max-height: none; 
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+      transition: transform 0.2s;
+    }
+    .card-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-body { display: flex; flex-direction: column; }
     .card:hover {
       transform: translateY(-6px) scale(1.03);
       box-shadow: 0 6px 24px rgba(44,62,80,0.12);
@@ -69,18 +57,10 @@
       letter-spacing: 1px;
       text-align: center;
     }
-    /* Animazione fade-in */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Applichiamo l'animazione alla hero section */
-.hero {
-  opacity: 0; /* parte invisibile */
-  animation: fadeIn 2s ease-out forwards; /* durata 2 secondi, effetto ease-out */
-}
-
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
@@ -95,7 +75,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="chisono.html">Chi sono</a></li>
+        <li class="nav-item"><a class="nav-link" href="chisono.html">Chi sono</a></li>
         <li class="nav-item"><a class="nav-link" href="esercizi.html">Esercizi</a></li>
         <li class="nav-item"><a class="nav-link" href="guide.html">Guide</a></li>
         <li class="nav-item"><a class="nav-link" href="contatti.html">Contatti</a></li>
@@ -103,7 +83,6 @@
     </div>
   </div>
 </nav>
-
 
 <!-- Hero Section -->
 <section class="hero">
@@ -136,6 +115,7 @@ fetch('novita.json')
   .then(response => response.json())
   .then(data => {
     const pubblicazioniRow = document.getElementById('pubblicazioni-row');
+
     // Ordina per data decrescente
     data.sort((a, b) => {
       const da = a.data ? new Date(a.data) : new Date(0);
@@ -151,14 +131,23 @@ fetch('novita.json')
 
       let riferimentiHtml = '';
       if (novita.riferimenti && Array.isArray(novita.riferimenti) && novita.riferimenti.length > 0) {
-        riferimentiHtml = `<div class='mb-2'><strong>Riferimenti utili:</strong><ul style='padding-left:18px;'>` +
-          novita.riferimenti.map(ref => `<li><a href='${ref}' target='_blank' rel='noopener'>${ref}</a></li>`).join('') +
-          `</ul></div>`;
+        riferimentiHtml = `
+          <div class="mb-2">
+            <strong>Riferimenti utili:</strong>
+            <ul style="padding-left:18px;">
+              ${novita.riferimenti.map(ref => `<li><a href="${ref}" target="_blank" rel="noopener">${ref}</a></li>`).join('')}
+            </ul>
+          </div>
+        `;
       }
 
       let allegatoHtml = '';
       if (novita.allegato && novita.allegato.url) {
-        allegatoHtml = `<div class='mb-2'><a href='${novita.allegato.url}' target='_blank' rel='noopener'><span style='font-size:1.2em;'>📎</span> Allegato</a></div>`;
+        allegatoHtml = `
+          <div class="mb-2">
+            <a href="${novita.allegato.url}" target="_blank" rel="noopener">📎 Allegato</a>
+          </div>
+        `;
       }
 
       col.innerHTML = `
@@ -171,12 +160,16 @@ fetch('novita.json')
             <span class="text-secondary mb-2">${novita.tipo === 'guida' ? 'Guida' : (novita.tipo === 'esercizio' ? 'Esercizio' : '')}</span>
             ${riferimentiHtml}
             ${allegatoHtml}
-            <a href="${novita.link}" class="btn btn-primary mt-auto">${novita.testoBottone}</a>
+            <a href="dettaglio.html?id=${novita.id}" class="btn btn-primary mt-auto">${novita.testoBottone}</a>
           </div>
         </div>
       `;
       pubblicazioniRow.appendChild(col);
     });
+  })
+  .catch(err => {
+    console.error("Errore nel caricamento delle novità:", err);
+    document.getElementById('pubblicazioni-row').innerHTML = '<p class="text-danger">Errore nel caricamento delle pubblicazioni.</p>';
   });
 </script>
 </body>

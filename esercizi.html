@@ -20,19 +20,32 @@ body {
   color: #2c3e50;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
+  text-align: center;
 }
 .card {
   margin-bottom: 20px;
-  box-shadow: 0 2px 12px rgba(44,62,80,0.08);
-  transition: transform 0.2s, opacity 0.5s;
+  box-shadow: 0 4px 20px rgba(44,62,80,0.1);
+  transition: transform 0.3s, opacity 0.5s;
   opacity: 0;
+  border-radius: 14px;
 }
 .card.show {
   opacity: 1;
 }
 .card:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 6px 24px rgba(44,62,80,0.12);
+  box-shadow: 0 8px 30px rgba(44,62,80,0.15);
+}
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
 }
 .footer {
   background: #2c3e50;
@@ -40,28 +53,25 @@ body {
   padding: 24px 0 12px 0;
   font-size: 1rem;
   letter-spacing: 1px;
+  text-align: center;
 }
-.card-text {
-  display: -webkit-box;
-  -webkit-line-clamp: 2; 
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.accordion-button {
+  background-color: #f0f4f8;
+  color: #2c3e50;
+  font-weight: 600;
 }
-.card {
-  max-height: 280px;
-}
-.card-body {
-  display: flex;
-  flex-direction: column;
+.accordion-button:not(.collapsed) {
+  background-color: #dbe7f3;
+  color: #2c3e50;
 }
 </style>
 </head>
 <body>
 
+<!-- Navbar completa -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Prof.ssa Assunta Santaniello</a>
+    <a class="navbar-brand" href="index.html">Prof. Assunta Santaniello</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -94,6 +104,8 @@ body {
 fetch('novita.json')
   .then(response => response.json())
   .then(data => {
+    // Assicurati che ogni elemento abbia un ID
+
     // Filtra solo esercizi e ordina per data
     const esercizi = data
       .filter(item => item.tipo && item.tipo.toLowerCase() === 'esercizio')
@@ -109,7 +121,7 @@ fetch('novita.json')
 
     const container = document.getElementById("esercizi-container");
 
-    // Crea un unico accordion
+    // Crea accordion per categorie
     const accordion = document.createElement("div");
     accordion.className = "accordion";
     accordion.id = "accordionEsercizi";
@@ -172,7 +184,7 @@ fetch('novita.json')
 
         const bottone = document.createElement("a");
         bottone.className = "btn btn-primary mt-auto";
-        bottone.href = es.allegato ? es.allegato : "#";
+        bottone.href = `dettaglio.html?id=${es.id}`; // collegamento al dettaglio
         bottone.textContent = es.testoBottone;
 
         cardBody.append(titolo, dataPub, descr, bottone);
