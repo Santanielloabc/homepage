@@ -104,7 +104,6 @@ body {
 fetch('novita.json')
   .then(response => response.json())
   .then(data => {
-    // Assicurati che ogni elemento abbia un ID
 
     // Filtra solo esercizi e ordina per data
     const esercizi = data
@@ -121,13 +120,14 @@ fetch('novita.json')
 
     const container = document.getElementById("esercizi-container");
 
-    // Crea accordion per categorie
+    // Crea accordion
     const accordion = document.createElement("div");
     accordion.className = "accordion";
     accordion.id = "accordionEsercizi";
     container.appendChild(accordion);
 
     for (const [categoria, items] of Object.entries(categorie)) {
+
       const accordionItem = document.createElement("div");
       accordionItem.className = "accordion-item";
 
@@ -144,7 +144,6 @@ fetch('novita.json')
       button.setAttribute("data-bs-toggle", "collapse");
       button.setAttribute("data-bs-target", `#${collapseId}`);
       button.setAttribute("aria-expanded", "false");
-      button.setAttribute("aria-controls", collapseId);
       button.textContent = categoria;
 
       accordionHeader.appendChild(button);
@@ -160,6 +159,7 @@ fetch('novita.json')
       accordionBody.className = "accordion-body row";
 
       items.forEach(es => {
+
         const col = document.createElement("div");
         col.className = "col-md-4";
 
@@ -175,23 +175,54 @@ fetch('novita.json')
 
         const dataPub = document.createElement("p");
         dataPub.className = "text-muted mb-2";
-        const dataObj = new Date(es.data);
-        dataPub.textContent = `Pubblicato il ${String(dataObj.getDate()).padStart(2,'0')}/${String(dataObj.getMonth()+1).padStart(2,'0')}/${dataObj.getFullYear()}`;
+
+        const d = new Date(es.data);
+        dataPub.textContent = 
+          `Pubblicato il ${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
 
         const descr = document.createElement("p");
         descr.className = "card-text";
         descr.textContent = es.descrizione;
 
+        // --- RIFERIMENTI ---
+        let riferimentiDiv = null;
+        if (es.riferimenti && Array.isArray(es.riferimenti) && es.riferimenti.length > 0) {
+          riferimentiDiv = document.createElement("div");
+          riferimentiDiv.innerHTML = `
+            <strong>Riferimenti utili:</strong>
+            <ul style="padding-left:18px;">
+              ${es.riferimenti.map(ref => `<li><a href="${ref}" target="_blank">${ref}</a></li>`).join('')}
+            </ul>
+          `;
+        }
+
+        // --- ALLEGATO ---
+        let allegatoDiv = null;
+        if (es.allegato && es.allegato.url) {
+          allegatoDiv = document.createElement("div");
+          allegatoDiv.innerHTML = `
+            <a href="${es.allegato.url}" target="_blank" rel="noopener">📎 Allegato</a>
+          `;
+        }
+
         const bottone = document.createElement("a");
         bottone.className = "btn btn-primary mt-auto";
-        bottone.href = `dettaglio.html?id=${es.id}`; // collegamento al dettaglio
+        bottone.href = `dettaglio.html?id=${es.id}`;
         bottone.textContent = es.testoBottone;
 
-        cardBody.append(titolo, dataPub, descr, bottone);
+        // Append ordinato
+        cardBody.append(titolo, dataPub, descr);
+
+        if (riferimentiDiv) cardBody.append(riferimentiDiv);
+        if (allegatoDiv) cardBody.append(allegatoDiv);
+
+        cardBody.append(bottone);
+
         card.appendChild(cardBody);
         col.appendChild(card);
         accordionBody.appendChild(col);
 
+        // animazione
         setTimeout(() => card.classList.add('show'), 100);
       });
 
@@ -202,6 +233,7 @@ fetch('novita.json')
   })
   .catch(err => console.error('Errore caricando JSON:', err));
 </script>
+
 
 </body>
 </html>

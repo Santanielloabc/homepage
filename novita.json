@@ -14,33 +14,37 @@
     "id": 2,
     "tipo": "guida",
     "categoria": "INTELLIGENZA ARTIFICIALE",
-    "titolo": "NotebookLM",
-    "descrizione": "Strumento di Google per interagire con documenti tramite AI.",
+    "titolo": "AI IN CLASSE",
+    "descrizione": "Navigare le normative e padroneggiare gli strumenti: focus su NotebookLM",
     "testoBottone": "Leggi la guida",
     "data": "2025-11-20",
-    "allegato": null,
-    "riferimenti": []
+    "allegato": {
+      "url": "allegati/AIINCLASSE.pdf"
+    },"riferimenti": []
   },
   {
     "id": 3,
     "tipo": "guida",
-    "categoria": "ECONOMIA AZIENDALE",
-    "titolo": "L'uso dei ratei",
-    "descrizione": "Esempi pratici sui ratei.",
+    "categoria": "GPOI",
+    "titolo": "GPOI: Riassunto quinto anno",
+    "descrizione": "Modelli economici, Vincolo di bilancio, Domanda e offerta, investimento vs outsourcing, swiching costs, marketing, startup, redditività, liquidità e cicli aziendali, shareholder, stakeholder, sistema informativo aziendale: tempo, costi e risorse, WBS, CPM, Diagramma di GANTT",
     "testoBottone": "Leggi la guida",
     "data": "2025-11-21",
-    "allegato": null,
-    "riferimenti": []
+    "allegato": {
+      "url": "allegati/GPOI.pdf"
+    },"riferimenti": []
   },
   {
     "id": 4,
-    "tipo": "esercizio",
-    "categoria": "ECONOMIA AZIENDALE",
-    "titolo": "RATEI",
-    "descrizione": "Esercizio sui ratei.",
+    "tipo": "guida",
+    "categoria": "INFORMATICA TRIENNIO",
+    "titolo": "LINGUAGGIO PHP: SINTASSI BASE",
+    "descrizione": "Variabili, tipi di dati, operatori, strutture di controllo (if, switch, while, for), funzioni e array in PHP. Una panoramica essenziale per iniziare a programmare con PHP e sviluppare applicazioni web dinamiche.",
     "testoBottone": "Vai all'esercizio",
     "data": "2025-11-21",
-    "allegato": null,
+    "allegato": {
+      "url": "allegati/2_pillola_sintassibase.pdf"
+    },
     "riferimenti": []
   },
   {
