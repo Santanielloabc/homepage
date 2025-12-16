@@ -4,7 +4,7 @@
   "tipo": "esercizio",
   "categoria": "ECONOMIA AZIENDALE",
   "titolo": "RIMANENZE DI MAGAZZINO",
-  "descrizione": "La Beta snc ha in magazzino all'inizio dell'esercizio 600 unità di merce X81YZ, valutate al prezzo unitario di 8 euro. Durante il primo trimestre si verificano le seguenti movimentazioni:\n15/01: scarico di 200 unità\n10/02: carico di 100 unità al prezzo di 9,00 euro;\n18/02: scarico di 60 unità;\n08/03: scarico di 40 unità;\n18/03: carico di 100 unità al prezzo di 8,80;\n28/03: scarico di 80 unità;\n\nCalcoliamo il valore degli scarichi di magazzino:\n1- con il metodo del costo medio ponderato continuo;\n2- con il metodo del costo medio ponderato per periodo;\n3- secondo il metodo LIFO;\n4- secondo il metodo FIFO;",
+  "descrizione": "La Beta snc ha in magazzino all'inizio dell'esercizio 600 unità di merce X81YZ, valutate al prezzo unitario di 8 euro. Durante il primo trimestre si verificano le seguenti movimentazioni:\n15/01: scarico di 200 unità\n10/02: carico di 100 unità al prezzo di 9,00 euro;\n18/02: scarico di 60 unità;\n08/03: scarico di 40 unità;\n18/03: carico di 100 unità al prezzo di 8,80;\n28/03: scarico di 80 unità;\n\nCalcoliamo il valore degli scarichi di magazzino:\n1- con il metodo del costo medio ponderato continuo;\n2- con il metodo del costo medio ponderato per periodo;\n3- secondo il metodo LIFO;\n4- secondo il metodo FIFO; \n\n Il link sottostante rimanda a un video esplicativo dell'esercizio.",
   "testoBottone": "Vai all'esercizio",
   "data": "2025-11-20",
   "allegato": null,
@@ -40,7 +40,7 @@
     "categoria": "INFORMATICA TRIENNIO",
     "titolo": "LINGUAGGIO PHP: SINTASSI BASE",
     "descrizione": "Variabili, tipi di dati, operatori, strutture di controllo (if, switch, while, for), funzioni e array in PHP. Una panoramica essenziale per iniziare a programmare con PHP e sviluppare applicazioni web dinamiche.",
-    "testoBottone": "Vai all'esercizio",
+    "testoBottone": "Leggi la guida",
     "data": "2025-11-21",
     "allegato": {
       "url": "allegati/2_pillola_sintassibase.pdf"
@@ -59,6 +59,47 @@
       "url": "allegati/EXCELIPRINCIPIDIBASE.pdf"
     },
     "riferimenti": []
+  },
+    {
+    "id": 6,
+    "tipo": "guida",
+    "categoria": "INFORMATICA TRIENNIO",
+    "titolo": "LINGUAGGIO PHP: SINTASSI BASE",
+    "descrizione": "Costanti e variabili d'ambiente, visibilità delle variabili, passaggio parametri per default e per valore,",
+    "testoBottone": "Leggi la guida",
+    "data": "2025-11-21",
+    "allegato": {
+      "url": "allegati/2_pillola_variabili e funzioni.pdf"
+    },
+    "riferimenti": []
+  },
+  
+    {
+    "id": 7,
+    "tipo": "guida",
+    "categoria": "INFORMATICA TRIENNIO",
+    "titolo": "LINGUAGGIO PHP: GESTIONE FILE",
+    "descrizione": "Inclusione di codice da file esterno, lettura e scrittura di file, gestione degli errori durante le operazioni sui file, file CSV e file di testo.",
+    "testoBottone": "Leggi la guida",
+    "data": "2025-11-21",
+    "allegato": {
+      "url": "allegati/3_pillola_gestione_file.pdf"
+    },
+    "riferimenti": []
+  },
+   {
+    "id": 8,
+    "tipo": "guida",
+    "categoria": "INFORMATICA TRIENNIO",
+    "titolo": "LINGUAGGIO PHP: GESTIONE FORM",
+    "descrizione": "Gestione dei form in PHP: invio dati tramite metodi GET e POST, esempio postback",
+    "testoBottone": "Leggi la guida",
+    "data": "2025-11-21",
+    "allegato": {
+      "url": "allegati/4_pillola_FORM.pdf"
+    },
+    "riferimenti": []
   }
+
   
 ]
