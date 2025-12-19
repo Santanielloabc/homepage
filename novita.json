@@ -99,6 +99,19 @@
       "url": "allegati/4_pillola_FORM.pdf"
     },
     "riferimenti": []
+  },
+  {
+    "id": 9,
+    "tipo": "guida",
+    "categoria": "STRUMENTI GOOGLE",
+    "titolo": "GUIDA OPERATIVA PER L'USO DI GOOGLE MODULES IN CLASSE",
+    "descrizione": "Guida operativa per l'uso di Google Modules in classe: creazione, distribuzione e analisi dei moduli per migliorare l'apprendimento e la valutazione degli studenti.",
+    "testoBottone": "Leggi la guida",
+    "data": "2025-12-19",
+    "allegato": {
+      "url": "allegati/GuidaGoogleModuli.pdf"
+    },
+    "riferimenti": []
   }
 
   
