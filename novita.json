@@ -13,7 +13,7 @@
   {
     "id": 2,
     "tipo": "guida",
-    "categoria": "STRUMENTI GOOGLE",
+    "categoria": "STRUMENTI PER DOCENTI",
     "titolo": "AI IN CLASSE",
     "descrizione": "Navigare le normative e padroneggiare gli strumenti: focus su NotebookLM",
     "testoBottone": "Leggi la guida",
@@ -103,7 +103,7 @@
   {
     "id": 9,
     "tipo": "guida",
-    "categoria": "STRUMENTI GOOGLE",
+    "categoria": "STRUMENTI PER DOCENTI",
     "titolo": "GUIDA OPERATIVA PER L'USO DI GOOGLE MODULES IN CLASSE",
     "descrizione": "Guida operativa per l'uso di Google Modules in classe: creazione, distribuzione e analisi dei moduli per migliorare l'apprendimento e la valutazione degli studenti.",
     "testoBottone": "Leggi la guida",
@@ -112,7 +112,19 @@
       "url": "allegati/GuidaGoogleModuli.pdf"
     },
     "riferimenti": []
-  }
+  },
+  {
+  "id": 10,
+  "tipo": "esercizio",
+  "categoria": "INFORMATICA BIENNIO",
+  "titolo": "EXCEL: I PRINCIPI DI BASE - ANALISI DELLE VENDITE SETTIMANALI",
+  "descrizione": "Analisi delle Vendite Settimanali in Excel\nObiettivo: Realizzare un foglio di calcolo per monitorare e analizzare le performance di vendita di quattro dipendenti, applicando formattazioni avanzate, formule statistiche, funzioni logiche e rappresentazioni grafiche.\n\n1. Configurazione e Formattazione Iniziale\n- Impostazione generale: Seleziona l'intero foglio di calcolo e imposta come carattere Verdana con dimensione 12.\n- Titolo del progetto: Inserisci un titolo nella cella A1. Seleziona l'intervallo di celle che copre la larghezza della tabella e utilizza la funzione \"Unisci e allinea al centro\". Applica lo stile grassetto.\n- Intestazioni di colonna: Per le celle contenenti i nomi dei giorni e dei venditori, attiva la funzione \"Testo a capo\". Allinea il testo centralmente, sia in orizzontale che in verticale, e applica il corsivo.\n- Struttura dati: Inserisci i nomi di quattro venditori (Rossi, Bianchi, Verdi, Corti) nelle righe e i giorni della settimana (Lunedì-Domenica) nelle colonne.\n\n2. Calcoli e Formule\n- Somme automatiche: Calcola il totale delle auto vendute settimanalmente per ogni venditore e il totale giornaliero per la squadra, utilizzando la funzione =SOMMA(). Utilizza il quadratino di trascinamento per copiare la formula nelle celle adiacenti.\n- Analisi statistica:\n  * Calcola la media delle vendite giornaliere per ogni venditore.\n  * Individua il valore minimo e massimo di auto vendute nell'intero intervallo settimanale.\n- Incidenza percentuale: Calcola la percentuale di vendite di ogni venditore rispetto al totale complessivo (parte piccola fratto parte grande). È obbligatorio utilizzare i riferimenti assoluti (simbolo $) per bloccare la cella del totale complessivo prima di trascinare la formula. Formatta il risultato come percentuale con un solo decimale.\n\n3. Logica e Automazione\n- Funzione SE: Inserisci una colonna Valutazione. Se il totale delle vendite settimanali è maggiore di 30, la cella deve restituire il testo \"Venditore Top\", altrimenti \"Da migliorare\".\n- Conteggio condizionale: Utilizza la funzione =CONTA.SE() per determinare in quanti giorni ogni venditore ha effettuato zero vendite.\n- Formattazione Condizionale: Applica le seguenti regole cromatiche alle vendite giornaliere:\n  * Rosso per valori minori di 5.\n  * Verde per valori maggiori di 9.\n  * Arancione per valori compresi tra 5 e 9.\n\n4. Visualizzazione e Bordi\n- Grafico: Inserisci un grafico a torta che rappresenti le vendite settimanali dei quattro venditori. Personalizza il titolo in \"Vendite settimanali\" e modifica la legenda affinché mostri i nomi dei venditori.\n- Bordi della tabella: Applica un bordo sottile azzurro a tutta la griglia (interno ed esterno). Per le sole intestazioni, applica un bordo blu scuro più spesso.",
+  "testoBottone": "Vai all'esercizio",
+  "data": "2026-01-12",
+  "allegato": null,
+  "riferimenti": ["https://www.youtube.com/watch?v=E31sjVKjlHg"]
+}
+
 
   
 ]
