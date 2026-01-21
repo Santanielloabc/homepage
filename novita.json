@@ -119,7 +119,7 @@
   "categoria": "STRUMENTI PER DOCENTI",
   "titolo": "IA PER DOCENTI: UTILIZZO DI NOTEBOOKLM, GEMINI E GOOGLE MODULI",
   "descrizione": "Guida pratica per docenti sull'utilizzo di strumenti di intelligenza artificiale come NotebookLM, Gemini e Google Moduli per migliorare l'insegnamento e la gestione delle classi.",
-  "testoBottone": "Leggia la guida",
+  "testoBottone": "Leggi la guida",
   "data": "2026-01-16",
   "allegato": {
     "url": "allegati/GuidaPerDocenti.pdf"
@@ -138,6 +138,19 @@
     "url": ""
   },
   "riferimenti": ["https://www.youtube.com/watch?v=E31sjVKjlHg"]
+},
+{
+  "id": 11,
+  "tipo": "guida",
+  "categoria": "STRUMENTI PER DOCENTI",
+  "titolo": "AUTOCART: GESTIONE DELLE AUTOCERTIFICAZIONI",
+  "descrizione": "Guida completa su Autocart, il software per la gestione delle autocertificazioni, comprendente:\n- Installazione e configurazione\n- Creazione e gestione delle autocertificazioni\n- Stampa e archiviazione dei documenti\n\nIdeale per semplificare la gestione delle autocertificazioni in ambito scolastico o lavorativo.",
+  "testoBottone": "Leggi la guida",
+  "data": "2026-01-21",
+  "allegato": {
+    "url": "allegati/Autocart.p"
+  },
+  "riferimenti": []
 }
 
 
