@@ -6,79 +6,353 @@
   <title>Prof.ssa Assunta Santaniello</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts - Poppins & Merriweather -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      padding-top: 70px;
-      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-    }
-    .navbar-brand { font-weight: bold; }
-    .hero {
+      padding-top: 80px;
+      font-family: 'Poppins', sans-serif;
       background-color: #f8f9fa;
-      padding: 50px 0;
+      color: #333;
+      overflow-x: hidden;
+    }
+    
+    /* Navbar Modernizzata */
+    .navbar {
+      background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%) !important;
+      box-shadow: 0 4px 20px rgba(0, 153, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+    }
+    
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #fff !important;
+      letter-spacing: -0.5px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .nav-link {
+      color: rgba(255, 255, 255, 0.9) !important;
+      font-weight: 600;
+      margin-left: 1.5rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.8);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    
+    .nav-link:hover {
+      color: #fff !important;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0099ff 0%, #0066cc 50%, #00d4ff 100%);
+      padding: 100px 0;
       text-align: center;
-      opacity: 0;
-      animation: fadeIn 2s ease-out forwards;
-    }
-    .hero h1 { font-size: 3rem; }
-    .hero p { font-size: 1.2rem; }
-    .card {
-      max-height: none; 
-      margin-bottom: 20px;
-      box-shadow: 0 2px 12px rgba(44,62,80,0.08);
-      transition: transform 0.2s;
-    }
-    .card-text {
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
+      color: #fff;
+      position: relative;
       overflow: hidden;
-      text-overflow: ellipsis;
+      opacity: 0;
+      animation: fadeInDown 1s ease-out forwards;
     }
-    .card-body { display: flex; flex-direction: column; }
-    .card:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 6px 24px rgba(44,62,80,0.12);
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: moveBackground 20s linear infinite;
+      opacity: 0.3;
     }
+    
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      font-size: clamp(2rem, 8vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+      font-weight: 500;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
     .hero-img {
       max-width: 180px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      margin-bottom: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      margin-bottom: 30px;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      object-fit: cover;
+      animation: floatImage 3s ease-in-out infinite;
     }
+    
+    /* Section Content */
+    .section-padding {
+      padding: 80px 0;
+    }
+    
     .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 3rem;
+      color: #333;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 80px;
+      height: 5px;
+      background: linear-gradient(90deg, #0099ff, #0066cc);
+      border-radius: 3px;
+    }
+    
+    /* Cards Modernizzate */
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(0, 153, 255, 0.2);
+    }
+    
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      flex-grow: 1;
+    }
+    
+    .card-title {
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #333;
+      line-height: 1.4;
     }
-    .footer {
-      background: #2c3e50;
+    
+    .card-text {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 20px;
+      flex-grow: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.6;
+    }
+    
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .card-date {
+      font-size: 0.85rem;
+      color: #999;
+      font-weight: 600;
+    }
+    
+    .badge {
+      font-size: 0.75rem;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    
+    .bg-info {
+      background: linear-gradient(135deg, #667eea, #764ba2) !important;
       color: #fff;
-      padding: 24px 0 12px 0;
-      font-size: 1rem;
-      letter-spacing: 1px;
-      text-align: center;
     }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, #0099ff, #0066cc);
+      border: none;
+      border-radius: 25px;
+      padding: 12px 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 153, 255, 0.4);
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .btn-primary:active {
+      transform: translateY(-1px);
+    }
+    
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%);
+      color: #fff;
+      padding: 40px 0 20px 0;
+      font-size: 0.95rem;
+      text-align: center;
+      margin-top: 80px;
+    }
+    
+    /* Animazioni */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes floatImage {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    
+    @keyframes moveBackground {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(50px, 50px);
+      }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 0;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .nav-link {
+        margin-left: 0;
+        padding: 0.5rem 0;
+      }
+      
+      .card-body {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- Barra di navigazione -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!-- Navbar Modernizzata -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Prof.ssa Assunta Santaniello</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <a class="navbar-brand" href="index.html">
+      <i class="fas fa-graduation-cap"></i> Prof.ssa Assunta Santaniello
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="chisono.html">Chi sono</a></li>
-        <li class="nav-item"><a class="nav-link" href="esercizi.html">Esercizi</a></li>
-        <li class="nav-item"><a class="nav-link" href="guide.html">Guide</a></li>
-        <li class="nav-item"><a class="nav-link" href="contatti.html">Contatti</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="chisono.html"><i class="fas fa-user"></i> Chi sono</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="esercizi.html"><i class="fas fa-pencil-alt"></i> Esercizi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="guide.html"><i class="fas fa-book"></i> Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contatti.html"><i class="fas fa-envelope"></i> Contatti</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -88,22 +362,36 @@
 <section class="hero">
   <div class="container">
     <img src="miafoto.jpg" alt="Foto profilo" class="hero-img">
-    <h1>Didattica digitale a portata di click! <br> 
+    <h1>Didattica digitale<br>a portata di click!</h1>
     <p>Materiali, esercizi e guide utili per accompagnare docenti e studenti nel loro percorso quotidiano.</p>
   </div>
 </section>
 
 <!-- Sezione Novità -->
-<section class="container my-5">
-  <h2 class="section-title">Ultime pubblicazioni</h2>
+<section class="container section-padding">
+  <div class="mb-5">
+    <h2 class="section-title">Ultime pubblicazioni</h2>
+  </div>
   <div class="row" id="pubblicazioni-row">
     <!-- Le card novità verranno caricate qui tramite JavaScript -->
+    <div class="col-12 text-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Caricamento...</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Footer -->
 <footer class="footer">
-  © 2025 Prof. Assunta – Tutti i diritti riservati
+  <div class="container">
+    <p class="mb-2">
+      © 2026 Prof.ssa Assunta Santaniello – Tutti i diritti riservati
+    </p>
+    <p style="font-size: 0.85rem; opacity: 0.9;">
+      Didattica digitale innovativa
+    </p>
+  </div>
 </footer>
 
 <!-- Bootstrap JS -->
@@ -115,6 +403,7 @@ fetch('novita.json')
   .then(response => response.json())
   .then(data => {
     const pubblicazioniRow = document.getElementById('pubblicazioni-row');
+    pubblicazioniRow.innerHTML = ''; // Pulisci il loader
 
     // Ordina per data decrescente
     data.sort((a, b) => {
@@ -123,19 +412,24 @@ fetch('novita.json')
       return db - da;
     });
 
+    if (data.length === 0) {
+      pubblicazioniRow.innerHTML = '<div class="col-12"><p class="text-center text-muted">Nessuna pubblicazione al momento.</p></div>';
+      return;
+    }
+
     data.forEach(novita => {
       const col = document.createElement('div');
       col.className = 'col-md-4';
       const oggi = new Date();
-      const dataPub = novita.data ? novita.data : oggi.toISOString().slice(0, 10);
+      const dataPub = novita.data ? new Date(novita.data).toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' }) : oggi.toLocaleDateString('it-IT');
 
       let riferimentiHtml = '';
       if (novita.riferimenti && Array.isArray(novita.riferimenti) && novita.riferimenti.length > 0) {
         riferimentiHtml = `
-          <div class="mb-2">
-            <strong>Riferimenti utili:</strong>
-            <ul style="padding-left:18px;">
-              ${novita.riferimenti.map(ref => `<li><a href="${ref}" target="_blank" rel="noopener">${ref}</a></li>`).join('')}
+          <div class="mb-3">
+            <strong><i class="fas fa-link"></i> Riferimenti utili:</strong>
+            <ul style="padding-left:18px; margin-top: 8px;">
+              ${novita.riferimenti.map(ref => `<li><a href="${ref}" target="_blank" rel="noopener" style="color: #667eea; text-decoration: none;">${ref}</a></li>`).join('')}
             </ul>
           </div>
         `;
@@ -144,23 +438,26 @@ fetch('novita.json')
       let allegatoHtml = '';
       if (novita.allegato && novita.allegato.url) {
         allegatoHtml = `
-          <div class="mb-2">
-            <a href="${novita.allegato.url}" target="_blank" rel="noopener">📎 Allegato</a>
+          <div class="mb-3">
+            <a href="${novita.allegato.url}" target="_blank" rel="noopener" class="btn btn-sm" style="background-color: #f0f0f0; color: #333;">
+              <i class="fas fa-file-download"></i> Scarica allegato
+            </a>
           </div>
         `;
       }
 
       col.innerHTML = `
         <div class="card h-100">
-          <div class="card-body d-flex flex-column">
-            <span class="text-muted mb-1" style="font-size:0.98em;">🗓️ ${dataPub}</span>
-            <span class="badge bg-info mb-2">${novita.categoria ? novita.categoria : ''}</span>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-date"><i class="fas fa-calendar-alt"></i> ${dataPub}</span>
+              <span class="badge bg-info">${novita.categoria ? novita.categoria : 'Generale'}</span>
+            </div>
             <h5 class="card-title">${novita.titolo}</h5>
             <p class="card-text">${novita.descrizione}</p>
-            <span class="text-secondary mb-2">${novita.tipo === 'guida' ? 'Guida' : (novita.tipo === 'esercizio' ? 'Esercizio' : '')}</span>
             ${riferimentiHtml}
             ${allegatoHtml}
-            <a href="dettaglio.html?id=${novita.id}" class="btn btn-primary mt-auto">${novita.testoBottone}</a>
+            <a href="dettaglio.html?id=${novita.id}" class="btn btn-primary">${novita.testoBottone || 'Leggi di più'}</a>
           </div>
         </div>
       `;
@@ -169,7 +466,7 @@ fetch('novita.json')
   })
   .catch(err => {
     console.error("Errore nel caricamento delle novità:", err);
-    document.getElementById('pubblicazioni-row').innerHTML = '<p class="text-danger">Errore nel caricamento delle pubblicazioni.</p>';
+    document.getElementById('pubblicazioni-row').innerHTML = '<div class="col-12"><p class="text-center text-danger"><i class="fas fa-exclamation-triangle"></i> Errore nel caricamento delle pubblicazioni.</p></div>';
   });
 </script>
 </body>

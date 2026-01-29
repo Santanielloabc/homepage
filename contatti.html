@@ -5,64 +5,323 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contatti – Prof.ssa Assunta Santaniello</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts - Poppins & Merriweather -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    
-    body { padding-top: 70px; background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); 
-            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-}
-    .section-title { font-weight: 700; color: #2c3e50; margin-bottom: 1.5rem; letter-spacing: 1px; }
-    .footer { background: #2c3e50; color: #fff; padding: 24px 0 12px 0; font-size: 1rem; letter-spacing: 1px; }
-    .contact-box { background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(44,62,80,0.08); padding: 30px; max-width: 500px; margin: 40px auto; }
-  /* Animazione fade-in */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* Applichiamo l'animazione alla contact-box */
-.contact-box {
-  opacity: 0; /* parte invisibile */
-  animation: fadeIn 2s ease-out forwards; /* 2 secondi di durata */
-}
+    body {
+      padding-top: 80px;
+      background-color: #f8f9fa;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+    }
 
+    /* Navbar Modernizzata */
+    .navbar {
+      background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%) !important;
+      box-shadow: 0 4px 20px rgba(0, 153, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #fff !important;
+      letter-spacing: -0.5px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-link {
+      color: rgba(255, 255, 255, 0.9) !important;
+      font-weight: 600;
+      margin-left: 1.5rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.8);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-link:hover {
+      color: #fff !important;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 80px 0;
+      min-height: calc(100vh - 160px);
+      display: flex;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: #333;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 80px;
+      height: 5px;
+      background: linear-gradient(90deg, #0099ff, #0066cc);
+      border-radius: 3px;
+    }
+
+    .contact-box {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 153, 255, 0.1);
+      padding: 50px;
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease-out forwards;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .contact-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0, 153, 255, 0.15);
+    }
+
+    .contact-box p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .contact-info {
+      margin: 20px 0;
+    }
+
+    .contact-info strong {
+      color: #333;
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .contact-info a {
+      color: #0099ff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #0066cc;
+      text-decoration: underline;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-list li:last-child {
+      border-bottom: none;
+    }
+
+    .contact-list i {
+      color: #0099ff;
+      font-size: 1.2rem;
+      width: 30px;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      padding-top: 25px;
+      border-top: 2px solid #f0f0f0;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0099ff, #0066cc);
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 153, 255, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%);
+      color: #fff;
+      padding: 40px 0 20px 0;
+      font-size: 0.95rem;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    /* Animazioni */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-section {
+        padding: 60px 0;
+        min-height: auto;
+      }
+
+      .contact-box {
+        padding: 30px;
+        margin-top: 20px;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .nav-link {
+        margin-left: 0;
+        padding: 0.5rem 0;
+      }
+
+      .social-links {
+        gap: 15px;
+      }
+
+      .social-links a {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+<!-- Navbar Modernizzata -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Prof.ssa Assunta Santaniello</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <a class="navbar-brand" href="index.html">
+      <i class="fas fa-graduation-cap"></i> Prof.ssa Assunta Santaniello
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="chisono.html">Chi sono</a></li>
-        <li class="nav-item"><a class="nav-link" href="esercizi.html">Esercizi</a></li>
-        <li class="nav-item"><a class="nav-link" href="guide.html">Guide</a></li>
-        <li class="nav-item"><a class="nav-link active" href="contatti.html">Contatti</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="chisono.html"><i class="fas fa-user"></i> Chi sono</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="esercizi.html"><i class="fas fa-pencil-alt"></i> Esercizi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="guide.html"><i class="fas fa-book"></i> Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="contatti.html"><i class="fas fa-envelope"></i> Contatti</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
-<section class="container contact-box">
-  <h2 class="section-title">Contatti</h2>
-  <p>Per richieste, collaborazioni o informazioni:</p>
-  <ul class="list-unstyled">
-    <li><strong>Email:</strong> <a href="mailto:assusantaniello1@gmail.com">assusantaniello1@gmail.com</a></li>
 
-  </ul>
-</section>
-<footer class="footer text-center">
+<!-- Contact Section -->
+<section class="contact-section">
   <div class="container">
-    <div class="mb-2">© 2025 Prof. Assunta – Tutti i diritti riservati</div>
-    <div>
-      <a href="#" class="text-white me-3">Email</a>
-      <a href="#" class="text-white me-3">Instagram</a>
-      <a href="#" class="text-white">LinkedIn</a>
+    <div class="contact-box">
+      <h2 class="section-title">Contatti</h2>
+      <p>Per richieste, collaborazioni o informazioni, non esitare a contattarmi:</p>
+      
+      <ul class="contact-list">
+        <li>
+          <i class="fas fa-envelope"></i>
+          <div>
+            <strong>Email:</strong>
+            <a href="mailto:assusantaniello1@gmail.com">assusantaniello1@gmail.com</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="social-links">
+        <a href="#" title="Email" data-toggle="tooltip">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="#" title="Instagram" data-toggle="tooltip">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" title="LinkedIn" data-toggle="tooltip">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p class="mb-2">© 2026 Prof.ssa Assunta Santaniello – Tutti i diritti riservati</p>
+    <p style="font-size: 0.85rem; opacity: 0.9;">Didattica digitale innovativa</p>
+  </div>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

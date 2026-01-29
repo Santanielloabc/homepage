@@ -3,44 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dettaglio</title>
+  <title>Dettaglio – Prof.ssa Assunta Santaniello</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts - Poppins & Merriweather -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    body {
-      padding-top: 70px;
-      font-family: "Playfair Display", Georgia, serif;
-      background: #f7f9fc;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      padding-top: 80px;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Navbar Modernizzata */
+    .navbar {
+      background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%) !important;
+      box-shadow: 0 4px 20px rgba(0, 153, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #fff !important;
+      letter-spacing: -0.5px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Content Box */
     .content-box {
       background: #fff;
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 153, 255, 0.1);
       max-width: 900px;
-      margin: 40px auto;
+      margin: 60px auto;
+      animation: fadeInUp 0.8s ease-out forwards;
+      line-height: 1.8;
+      color: #555;
     }
+
+    .content-box h2 {
+      font-weight: 800;
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      color: #333;
+      line-height: 1.3;
+    }
+
+    .content-box h5 {
+      font-weight: 700;
+      color: #333;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      border-left: 4px solid #0099ff;
+      padding-left: 15px;
+    }
+
+    .badge {
+      background: linear-gradient(135deg, #0099ff, #0066cc) !important;
+      padding: 8px 16px;
+      font-weight: 600;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .content-box p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .text-muted {
+      color: #999 !important;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+    }
+
     pre {
       white-space: pre-wrap;
-      font-family: inherit;
-      font-size: 1.1rem;
+      font-family: 'Merriweather', serif;
+      font-size: 1.05rem;
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid #0099ff;
+      margin: 25px 0;
+      line-height: 1.7;
+      overflow-x: auto;
+    }
+
+    .content-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .content-box ul li {
+      padding: 10px 0;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .content-box ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #0099ff;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .content-box a {
+      color: #0099ff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .content-box a:hover {
+      color: #0066cc;
+      text-decoration: underline;
+    }
+
+    /* Buttons */
+    .btn-outline-primary {
+      border: 2px solid #0099ff;
+      color: #0099ff;
+      font-weight: 700;
+      border-radius: 25px;
+      padding: 12px 30px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-outline-primary:hover {
+      background: linear-gradient(135deg, #0099ff, #0066cc);
+      border-color: transparent;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 153, 255, 0.4);
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%);
+      color: #fff;
+      padding: 40px 0 20px 0;
+      font-size: 0.95rem;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    /* Animazioni */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding-top: 80px;
+      }
+
+      .content-box {
+        padding: 30px;
+        margin: 30px 15px;
+      }
+
+      .content-box h2 {
+        font-size: 1.8rem;
+      }
+
+      pre {
+        font-size: 0.95rem;
+        padding: 15px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Prof. Assunta Santaniello</a>
+    <a class="navbar-brand" href="index.html">
+      <i class="fas fa-graduation-cap"></i> Prof.ssa Assunta Santaniello
+    </a>
   </div>
 </nav>
 
 <div id="contenuto" class="content-box">
-  <h2>Caricamento...</h2>
+  <h2><i class="fas fa-spinner fa-spin"></i> Caricamento...</h2>
 </div>
 
+<footer class="footer">
+  <div class="container">
+    <p class="mb-2">© 2026 Prof.ssa Assunta Santaniello – Tutti i diritti riservati</p>
+    <p style="font-size: 0.85rem; opacity: 0.9;">Didattica digitale innovativa</p>
+  </div>
+</footer>
 
 <script>
 // Ottieni il parametro "?id="
@@ -56,35 +241,59 @@ fetch("novita.json")
     const box = document.getElementById("contenuto");
 
     if (!item) {
-      box.innerHTML = "<h3>Elemento non trovato.</h3>";
+      box.innerHTML = `
+        <h2><i class="fas fa-exclamation-triangle"></i> Elemento non trovato</h2>
+        <p style="margin-top: 20px;">Scusa, l'elemento che cerchi non esiste.</p>
+        <a href="index.html" class="btn btn-outline-primary mt-4">
+          <i class="fas fa-arrow-left"></i> Torna indietro
+        </a>
+      `;
       return;
     }
 
     let riferimentiHtml = "";
     if (item.riferimenti?.length > 0) {
       riferimentiHtml =
-        `<h5>Riferimenti utili</h5><ul>` +
-        item.riferimenti.map(r => `<li><a href="${r}" target="_blank">${r}</a></li>`).join("") +
+        `<h5><i class="fas fa-link"></i> Riferimenti utili</h5><ul>` +
+        item.riferimenti.map(r => `<li><a href="${r}" target="_blank" rel="noopener">${r}</a></li>`).join("") +
         `</ul>`;
     }
 
     let allegatoHtml = "";
     if (item.allegato?.url) {
       allegatoHtml =
-        `<p><a href="${item.allegato.url}" target="_blank">📎 Visualizza allegato</a></p>`;
+        `<p style="margin-top: 25px;"><a href="${item.allegato.url}" target="_blank" rel="noopener" class="btn btn-outline-primary"><i class="fas fa-file-download"></i> Scarica allegato</a></p>`;
     }
 
+    const dataFormattata = new Date(item.data).toLocaleDateString('it-IT', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+
     box.innerHTML = `
-      <span class="badge bg-info mb-3">${item.categoria}</span>
+      <span class="badge">${item.categoria || 'Generale'}</span>
       <h2>${item.titolo}</h2>
-      <p class="text-muted">🗓️ ${item.data}</p>
+      <p class="text-muted"><i class="fas fa-calendar-alt"></i> ${dataFormattata}</p>
 
       <pre>${item.descrizione}</pre>
 
       ${riferimentiHtml}
       ${allegatoHtml}
 
-      <a href="index.html" class="btn btn-outline-primary mt-4">⬅ Torna indietro</a>
+      <a href="index.html" class="btn btn-outline-primary mt-5">
+        <i class="fas fa-arrow-left"></i> Torna indietro
+      </a>
+    `;
+  })
+  .catch(err => {
+    console.error('Errore:', err);
+    document.getElementById("contenuto").innerHTML = `
+      <h2><i class="fas fa-exclamation-triangle"></i> Errore nel caricamento</h2>
+      <p style="margin-top: 20px;">Si è verificato un errore. Riprova più tardi.</p>
+      <a href="index.html" class="btn btn-outline-primary mt-4">
+        <i class="fas fa-arrow-left"></i> Torna indietro
+      </a>
     `;
   });
 </script>

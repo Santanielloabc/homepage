@@ -151,6 +151,19 @@
     "url": "allegati/Autocart.pdf"
   },
   "riferimenti": []
+},
+{
+  "id": 12,
+  "tipo": "esercizio",
+  "categoria": "INFORMATICA BIENNIO",
+  "titolo": "WORD: I PRINCIPI DI BASE (ESERCIZIO GUIDATO)",
+  "descrizione": "- 0,25p Rinominare il file: COGNOME, NOME e CLASSE.\n\n- 0,5p Portare il valore dei margini:\n\n○ sinistro e destro 2,1\n\n○ alto 1,8\n\n○ basso 1,5\n\nCreare la copertina nella prima pagina seguendo le indicazioni di seguito riportate:\n- 0,5p il titolo “INTELLIGENZA ARTIFICIALE: IL FUTURO È GIÀ QUI” deve essere scritto in grassetto, con stile Candara, altezza 34, blu scuro, centrato;\n\n- 0,5p il sottotitolo deve essere scritto in corsivo, con carattere Candara, altezza 18, nero, giustificato;\n\n- 0,5p applicare un riquadro al sottotitolo, di colore blu scuro, spessore 3 pt, sfondo azzurro chiaro;\n\n- 0,5p inserire l’immagine (che si trova in fondo al testo) dopo il sottotitolo, centrata in orizzontale, senza modificarne la dimensione;\n\n- 0,5p sotto l’immagine inserire nome, cognome, a capo classe e, a capo, anno scolastico, con carattere Candara, altezza 15, nero e grassetto, allineare a destra, interlinea 1,5.\n\n- 0,25p Inserire le interruzioni di pagina dove richiesto (indicate in rosso nel testo).\n\n________________________________________\n\nNelle pagine successive alla copertina, formattare il testo con le seguenti indicazioni:\n- 0,5p Andare a capo ad ogni “/”.\n\n- 0,25p Eliminare i collegamenti ipertestuali (link).\n\n- 0,75p I titoli degli argomenti devono essere maiuscoli, con carattere Candara, altezza 24, grassetto, blu scuro, allineati a sinistra.\n\n- 0,75p I sottotitoli devono essere maiuscoli, con carattere Candara, altezza 18, grassetto, blu scuro, allineati a sinistra.\n\n- 0,75p Giustificare tutto il testo, utilizzare carattere Candara, altezza 11, colore nero, interlinea 1,5.\n\n________________________________________\n\nNella pagina relativa ai “SETTORI DI APPLICAZIONE”:\n- 0,25p Applicare un rientro di 0,8 a sinistra al primo paragrafo della pagina “SETTORI DI APPLICAZIONE”.\n\n- Inserire una tabella con:\n\n○ 0,5p costituita da 2 colonne e 5 righe;\n\n○ 0,5p nella prima cella della prima riga inserire:\n“AMBITO DI UTILIZZO”\ne nella seconda cella:\n“APPLICAZIONE DELL’INTELLIGENZA ARTIFICIALE”,\ncentrati, con carattere Calibrì, altezza 16, blu scuro, grassetto;\n\n○ 0,5p copiare e incollare nella tabella tutti i nomi degli ambiti (scritti in blu) nella prima colonna e tutte le descrizioni nella seconda colonna.\nIl testo deve essere con carattere Calibrì, altezza 13, nero, giustificato;\n\n○ 0,5p la tabella deve avere tutti i bordi blu scuro, spessore 3, sfondo azzurro chiaro, centrata orizzontalmente.\n\n________________________________________\n\n- 0,25p Inserire i numeri di pagina allineati a destra (esclusa la copertina).\n\n- 0,5p Inserire l’intestazione con il titolo:\n“INTELLIGENZA ARTIFICIALE: IL FUTURO È GIÀ QUI”,\ncarattere Candara, altezza 15, nero, allineata a destra (esclusa la copertina).\n\n- 0,25p Inserire una filigrana con scritto “IA” in diagonale, carattere Verdana, colore blu scuro, dimensione 120, semitrasparente.\n\n- 0,25p Cancellare le pagine vuote e tutte le indicazioni scritte in rosso e blu e quelle tra parentesi (cancellare anche le parentesi).\nNON cancellare i “/”.\n\nDi seguito in allegato trovi il file da formattare. Clicca sul link per seguire l'esercizio guidato su YouTube.",
+  "testoBottone": "Esegui l'esercizio",
+  "data": "2026-01-27",
+  "allegato": {
+    "url": "allegati/"
+  },
+  "riferimenti": []
 }
 
 

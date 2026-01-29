@@ -5,120 +5,356 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guide – Prof.ssa Assunta Santaniello</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Google Fonts - Poppins & Merriweather -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  padding-top: 70px;
-  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  padding-top: 80px;
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  overflow-x: hidden;
 }
+
+/* Navbar Modernizzata */
+.navbar {
+  background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%) !important;
+  box-shadow: 0 4px 20px rgba(0, 153, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+}
+
 .navbar-brand {
-  font-weight: bold;
-  letter-spacing: 1px;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #fff !important;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 600;
+  margin-left: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Section Title */
 .section-title {
-  font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
 }
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, #0099ff, #0066cc);
+  border-radius: 3px;
+}
+
+/* Cards */
 .card {
-  margin-bottom: 20px;
-  box-shadow: 0 4px 20px rgba(44,62,80,0.1);
-  transition: transform 0.3s, opacity 0.5s;
-  opacity: 0;
-  border-radius: 14px;
-}
-.card.show {
-  opacity: 1;
-}
-.card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 8px 30px rgba(44,62,80,0.15);
-}
-.card-text {
-  display: -webkit-box;
-  -webkit-line-clamp: 3; 
-  -webkit-box-orient: vertical;
+  border: none;
+  border-radius: 15px;
   overflow: hidden;
-  text-overflow: ellipsis;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
 }
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(0, 153, 255, 0.2);
+}
+
 .card-body {
   display: flex;
   flex-direction: column;
+  padding: 30px;
+  flex-grow: 1;
 }
-.footer {
-  background: #2c3e50;
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #0099ff, #0066cc);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: auto;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 153, 255, 0.4);
   color: #fff;
-  padding: 24px 0 12px 0;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  text-align: center;
+  text-decoration: none;
 }
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+/* Accordion */
 .accordion-button {
   background-color: #f0f4f8;
-  color: #2c3e50;
-  font-weight: 600;
+  color: #333;
+  font-weight: 700;
+  border-radius: 10px !important;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
 }
+
 .accordion-button:not(.collapsed) {
-  background-color: #dbe7f3;
-  color: #2c3e50;
+  background: linear-gradient(135deg, #0099ff, #0066cc);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 153, 255, 0.2);
+}
+
+.accordion-button:focus {
+  border-color: #0099ff;
+  box-shadow: 0 0 0 0.25rem rgba(0, 153, 255, 0.25);
+}
+
+/* Filter Buttons */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.filter-btn {
+  background-color: #f0f4f8;
+  color: #333;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+  border-color: #0099ff;
+  color: #0099ff;
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #0099ff, #0066cc);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(0, 153, 255, 0.3);
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%);
+  color: #fff;
+  padding: 40px 0 20px 0;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-top: 80px;
+}
+
+/* Animazioni */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .nav-link {
+    margin-left: 0;
+    padding: 0.5rem 0;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
 }
 </style>
 </head>
 <body>
 
-<!-- Navbar completa -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!-- Navbar Modernizzata -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Prof. Assunta Santaniello</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <a class="navbar-brand" href="index.html">
+      <i class="fas fa-graduation-cap"></i> Prof.ssa Assunta Santaniello
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="chisono.html">Chi sono</a></li>
-        <li class="nav-item"><a class="nav-link" href="esercizi.html">Esercizi</a></li>
-        <li class="nav-item"><a class="nav-link active" href="guide.html">Guide</a></li>
-        <li class="nav-item"><a class="nav-link" href="contatti.html">Contatti</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="chisono.html"><i class="fas fa-user"></i> Chi sono</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="esercizi.html"><i class="fas fa-pencil-alt"></i> Esercizi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="guide.html"><i class="fas fa-book"></i> Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contatti.html"><i class="fas fa-envelope"></i> Contatti</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<section class="container my-5">
-  <h2 class="section-title">Guide</h2>
+<section class="container" style="padding: 80px 0;">
+  <div class="mb-5">
+    <h2 class="section-title">Guide</h2>
+  </div>
+  
+  <!-- Filter Container -->
+  <div class="filter-container" id="filter-container"></div>
+  
   <div id="guide-container"></div>
 </section>
 
-<footer class="footer text-center">
+<!-- Footer -->
+<footer class="footer">
   <div class="container">
-    <div class="mb-2">© 2025 Prof. Assunta Santaniello – Tutti i diritti riservati</div>
+    <p class="mb-2">© 2026 Prof.ssa Assunta Santaniello – Tutti i diritti riservati</p>
+    <p style="font-size: 0.85rem; opacity: 0.9;">Didattica digitale innovativa</p>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+let allGuide = [];
+let allAccordionItems = {};
+
 // Carica JSON esterno
 fetch('novita.json')
   .then(response => response.json())
   .then(dati => {
 
     // Filtra solo guide e ordina dal più recente
-    const guide = dati
+    allGuide = dati
       .filter(item => item.tipo && item.tipo.toLowerCase() === "guida")
       .sort((a, b) => new Date(b.data) - new Date(a.data));
 
     // Raggruppa per categoria
     const categorie = {};
-    guide.forEach(g => {
+    allGuide.forEach(g => {
       const cat = g.categoria.trim();
       if (!categorie[cat]) categorie[cat] = [];
       categorie[cat].push(g);
     });
 
     const container = document.getElementById("guide-container");
+    const filterContainer = document.getElementById("filter-container");
+
+    // Crea pulsanti filtro
+    const allBtn = document.createElement("button");
+    allBtn.className = "filter-btn active";
+    allBtn.textContent = "Tutte";
+    allBtn.onclick = () => filterGuide("all");
+    filterContainer.appendChild(allBtn);
+
+    Object.keys(categorie).forEach(cat => {
+      const btn = document.createElement("button");
+      btn.className = "filter-btn";
+      btn.textContent = cat;
+      btn.onclick = () => filterGuide(cat);
+      filterContainer.appendChild(btn);
+    });
 
     // Crea accordion per categorie
     const accordion = document.createElement("div");
@@ -129,6 +365,7 @@ fetch('novita.json')
     for (const [categoria, items] of Object.entries(categorie)) {
       const accordionItem = document.createElement("div");
       accordionItem.className = "accordion-item";
+      accordionItem.setAttribute("data-category", categoria);
 
       const headerId = `heading-${categoria.replace(/\s+/g,'')}`;
       const collapseId = `collapse-${categoria.replace(/\s+/g,'')}`;
@@ -199,10 +436,45 @@ fetch('novita.json')
       accordionCollapse.appendChild(accordionBody);
       accordionItem.appendChild(accordionCollapse);
       accordion.appendChild(accordionItem);
-
+      allAccordionItems[categoria] = accordionItem;
     }
   })
   .catch(error => console.error('Errore caricando JSON:', error));
+
+// Funzione filtro
+function filterGuide(categoria) {
+  // Aggiorna i pulsanti
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if ((categoria === 'all' && btn.textContent === 'Tutte') || btn.textContent === categoria) {
+      btn.classList.add('active');
+    }
+  });
+
+  if (categoria === 'all') {
+    // Quando clicchi "Tutte", apri TUTTI gli accordion
+    Object.keys(allAccordionItems).forEach(cat => {
+      const item = allAccordionItems[cat];
+      item.style.display = 'block';
+      const collapseElement = item.querySelector('.accordion-collapse');
+      collapseElement.classList.add('show');
+    });
+  } else {
+    // Quando filtri per categoria
+    Object.keys(allAccordionItems).forEach(cat => {
+      const item = allAccordionItems[cat];
+      const collapseElement = item.querySelector('.accordion-collapse');
+
+      if (cat === categoria) {
+        item.style.display = 'block';
+        collapseElement.classList.add('show');
+      } else {
+        item.style.display = 'none';
+        collapseElement.classList.remove('show');
+      }
+    });
+  }
+}
 </script>
 </body>
 </html>
