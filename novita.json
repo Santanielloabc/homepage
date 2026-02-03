@@ -127,20 +127,20 @@
   "riferimenti": []
 },
 {
-  "id": 10,
+  "id": 11,
   "tipo": "esercizio",
   "categoria": "INFORMATICA BIENNIO",
   "titolo": "EXCEL: I PRINCIPI DI BASE (ESERCIZIO GUIDATO)",
-  "descrizione": "Esercizio guidato su Excel, comprendente:\n- Funzioni SOMMA, MEDIA, MAX, MIN\n- Riferimenti assoluti e relativi\n- Incidenza percentuale\n- Funzioni: CONTA.SE e SE\n\nIdeale per iniziare a gestire dati e calcoli automatici in modo efficace.",
+  "descrizione": "Esercizio guidato su Excel, comprendente:\n- Funzioni SOMMA, MEDIA, MAX, MIN\n- Riferimenti assoluti e relativi\n- Incidenza percentuale\n- Funzioni: CONTA.SE e SE\n\nIdeale per iniziare a gestire dati e calcoli automatici in modo efficace.\n\nDi seguito in allegato trovi il file Excel con i dati necessari per svolgere l'esercizio. Clicca sul link per seguire l'esercizio guidato su YouTube.",
   "testoBottone": "Esegui l'esercizio",
   "data": "2026-01-16",
   "allegato": {
-    "url": ""
+    "url": "allegati/automobili.xlsx"
   },
   "riferimenti": ["https://www.youtube.com/watch?v=E31sjVKjlHg"]
 },
 {
-  "id": 11,
+  "id": 12,
   "tipo": "guida",
   "categoria": "STRUMENTI PER DOCENTI",
   "titolo": "AUTOCART: GESTIONE DELLE AUTOCERTIFICAZIONI",
@@ -153,7 +153,7 @@
   "riferimenti": []
 },
 {
-  "id": 12,
+  "id": 13,
   "tipo": "esercizio",
   "categoria": "INFORMATICA BIENNIO",
   "titolo": "WORD: I PRINCIPI DI BASE (ESERCIZIO GUIDATO)",
