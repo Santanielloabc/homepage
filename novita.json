@@ -12,8 +12,8 @@
   },
   {
     "id": 2,
-    "tipo": "guida",
-    "categoria": "STRUMENTI PER DOCENTI",
+    "tipo": "Strumenti",
+    "categoria": "INTELLIGENZA ARTIFICIALE",
     "titolo": "AI IN CLASSE",
     "descrizione": "Navigare le normative e padroneggiare gli strumenti: focus su NotebookLM",
     "testoBottone": "Leggi la guida",
@@ -102,9 +102,9 @@
   },
   {
     "id": 9,
-    "tipo": "guida",
-    "categoria": "STRUMENTI PER DOCENTI",
-    "titolo": "GUIDA OPERATIVA PER L'USO DI GOOGLE MODULES IN CLASSE",
+    "tipo": "Strumenti",
+    "categoria": "GOOGLE WORKSPACE",
+    "titolo": "GUIDA OPERATIVA: USO DI GOOGLE MODULI",
     "descrizione": "Guida operativa per l'uso di Google Modules in classe: creazione, distribuzione e analisi dei moduli per migliorare l'apprendimento e la valutazione degli studenti.",
     "testoBottone": "Leggi la guida",
     "data": "2025-12-19",
@@ -115,8 +115,8 @@
   },
   {
   "id": 10,
-  "tipo": "guida",
-  "categoria": "STRUMENTI PER DOCENTI",
+  "tipo": "Strumenti",
+  "categoria": "INTELLIGENZA ARTIFICIALE",
   "titolo": "IA PER DOCENTI: UTILIZZO DI NOTEBOOKLM, GEMINI E GOOGLE MODULI",
   "descrizione": "Guida pratica per docenti sull'utilizzo di strumenti di intelligenza artificiale come NotebookLM, Gemini e Google Moduli per migliorare l'insegnamento e la gestione delle classi.",
   "testoBottone": "Leggi la guida",
@@ -141,14 +141,14 @@
 },
 {
   "id": 12,
-  "tipo": "guida",
-  "categoria": "STRUMENTI PER DOCENTI",
-  "titolo": "AUTOCART: GESTIONE DELLE AUTOCERTIFICAZIONI",
-  "descrizione": "Guida completa su Autocart, il software per la gestione delle autocertificazioni, comprendente:\n- Installazione e configurazione\n- Creazione e gestione delle autocertificazioni\n- Stampa e archiviazione dei documenti\n\nIdeale per semplificare la gestione delle autocertificazioni in ambito scolastico o lavorativo.",
+  "tipo": "Strumenti",
+  "categoria": "GOOGLE WORKSPACE",
+  "titolo": "AUTOCRAT: STAMPA UNIONE",
+  "descrizione": "Guida completa su Autocrat, il software per la gestione delle autocertificazioni, comprendente:\n- Installazione e configurazione\n- Creazione e gestione delle autocertificazioni\n- Stampa e archiviazione dei documenti\n\nIdeale per semplificare la gestione delle autocertificazioni in ambito scolastico o lavorativo.",
   "testoBottone": "Leggi la guida",
   "data": "2026-01-21",
   "allegato": {
-    "url": "allegati/Autocart.pdf"
+    "url": "allegati/Autocrat.pdf"
   },
   "riferimenti": []
 },

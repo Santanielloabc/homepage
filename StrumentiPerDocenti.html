@@ -301,7 +301,7 @@ body {
 
 <section class="container" style="padding: 80px 0;">
   <div class="mb-5">
-    <h2 class="section-title">Esercizi</h2>
+    <h2 class="section-title">Strumenti per docenti</h2>
   </div>
   
   <!-- Filter Container -->
@@ -330,8 +330,7 @@ fetch('novita.json')
 
     // Filtra solo esercizi e ordina per data
     allEsercizi = data
-      .filter(item => item.tipo && item.tipo.toLowerCase() === 'esercizio')
-      .sort((a,b) => new Date(b.data) - new Date(a.data));
+      .filter(item => item.tipo && item.tipo.toLowerCase() === 'strumenti')      .sort((a,b) => new Date(b.data) - new Date(a.data));
 
     // Raggruppa per categoria
     const categorie = {};
