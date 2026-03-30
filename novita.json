@@ -164,6 +164,19 @@
     "url":"allegati/testoDaFormattareConConsegna.docx"  
   },
   "riferimenti": ["https://www.youtube.com/watch?v=lq2mZ6x-jhU"]
+},
+{
+  "id": 14,
+  "tipo": "Strumenti",
+  "categoria": "GOOGLE WORKSPACE",
+  "titolo": "GOOGLE MODULI AUTOMATICI: CREAZIONE E GESTIONE",
+  "descrizione": "Guida operativa per l'uso di Google Moduli automatici in classe: creazione e distribuzione.",
+  "testoBottone": "Esegui l'esercizio",
+  "data": "2026-03-30",
+  "allegato": {
+    "url":"allegati/GoogleModuliAutomatici.pdf"  
+  },
+  "riferimenti": []
 }
 
 
